@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DANH SÁCH BÀI BÁO</title>
+</head>
+<body>
+<h1> DANH MỤC TRANG  TÌM KIẾM</h1>
+    <table class ="table">
+        <tr>
+            <th> ID </th>
+            <th> Tiêu đề </th>
+            <th> Link gốc</th>
+        </tr>
+        {% for cat in data %}
+        <tr>
+            <td>
+                {{cat.id}}
+            </td>
+            <td>
+                {{cat.subject}}
+            </td>
+            <td>
+                {{cat.url}}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

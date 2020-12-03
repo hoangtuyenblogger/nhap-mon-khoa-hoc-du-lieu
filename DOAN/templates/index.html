@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tìm kiếm bài báo </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="url_for('static', filename='css/bootstrap.css')"> -->
+
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css'">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap-grid.css'">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap-reboot.min.css">
+</head>
+<body>
+<h1 class="text-center" > DANH MỤC CÁC BÀI BÁO </h1>
+<div>
+    <form>
+        <div class = "form-group">
+            <label class="font-weight-bold"> Tìm kiếm theo tiêu đề </label>
+            <input type = "text" name = "keywords"> 
+            <input type="submit" class="btn btn-primary" value = "Tìm kiếm">
+        </div>
+    </form>
+</div>
+<table class ="table">
+    <thead>
+        <tr>
+            <th> ID </th>
+            <th> Tiêu đề </th>
+            <th> Link gốc bài </th>
+            <th> Nguồn báo </th>
+        </tr>
+</thead>
+<tbody>
+        {% for new in data %}
+        <tr>
+            <td>
+                {{new.id}}
+            </td>
+            <td>
+                {{new.subject}}
+            </td>
+            <td>
+                <a  href="{{new.original_url}}" target="_blank">{{new.original_url}}</a>
+            </td>
+            <td>
+                {{new.category_id}}
+            </td>
+        </tr>
+        {% endfor %}
+</tbody>
+    </table>
+
+</body>
+</html>
